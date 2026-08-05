@@ -1,4 +1,4 @@
-module.komik = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
     const Komik = sequelize.define('Komik', {
         id: {
             type: DataTypes.INTEGER,
@@ -27,11 +27,11 @@ module.komik = (sequelize, DataTypes) => {
     });
 
     Komik.associate = (models) => {
-        Komik.belongsTo(models.penulis, {
+        Komik.belongsTo(models.Penulis, {
             foreignKey: 'penulis_id',
             as: 'penulis'
         });
-        Komik.belongsToMany(models.genre, {
+        Komik.belongsToMany(models.Genre, {
             through: 'komik_genre',
             foreignKey: 'komik_id',
             otherKey: 'genre_id',

@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Genre.associate = (models) => {
 
-        Genre.hasMany(models.komik, {
+        Genre.belongsToMany(models.Komik, {
             through: 'komik_genre',
             foreignKey: 'genre_id',
             otherKey: 'komik_id',
