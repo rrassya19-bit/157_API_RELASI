@@ -87,7 +87,7 @@ async function login(req, res) {
             },
             process.env.JWT_SECRET,
             {
-                expiresIn: process.env.JWT_EXPIRES
+                expiresIn: process.env.JWT_EXPIRES_IN
             }
         );
 
